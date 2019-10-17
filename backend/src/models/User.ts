@@ -1,8 +1,9 @@
 import { Schema, model, Document } from 'mongoose'
 /**
+ * Modelo da classe User
  * @noInheritDoc
  */
-interface UserInterface extends Document {
+export interface IUser extends Document {
     email: string
 }
 
@@ -13,4 +14,4 @@ const UserSchema:Schema = new Schema({
   email: String
 })
 
-export default model<UserInterface>('User', UserSchema)
+export default model<IUser>('User', UserSchema)

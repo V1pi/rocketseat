@@ -71,19 +71,26 @@
 							<h3>Classes</h3>
 							<ul class="tsd-index-list">
 								<li class="tsd-kind-class tsd-is-not-exported"><a href="classes/app.html" class="tsd-kind-icon">App</a></li>
+								<li class="tsd-kind-class"><a href="classes/bookingcontroller.html" class="tsd-kind-icon">Booking<wbr>Controller</a></li>
+								<li class="tsd-kind-class"><a href="classes/dashboardcontroller.html" class="tsd-kind-icon">Dashboard<wbr>Controller</a></li>
+								<li class="tsd-kind-class"><a href="classes/spotcontroller.html" class="tsd-kind-icon">Spot<wbr>Controller</a></li>
+								<li class="tsd-kind-class"><a href="classes/upload.html" class="tsd-kind-icon">Upload</a></li>
 								<li class="tsd-kind-class"><a href="classes/usercontroller.html" class="tsd-kind-icon">User<wbr>Controller</a></li>
 							</ul>
 						</section>
-						<section class="tsd-index-section tsd-is-not-exported">
+						<section class="tsd-index-section ">
 							<h3>Interfaces</h3>
 							<ul class="tsd-index-list">
-								<li class="tsd-kind-interface tsd-is-not-exported"><a href="interfaces/userinterface.html" class="tsd-kind-icon">User<wbr>Interface</a></li>
+								<li class="tsd-kind-interface"><a href="interfaces/ibooking.html" class="tsd-kind-icon">IBooking</a></li>
+								<li class="tsd-kind-interface"><a href="interfaces/ispot.html" class="tsd-kind-icon">ISpot</a></li>
+								<li class="tsd-kind-interface"><a href="interfaces/iuser.html" class="tsd-kind-icon">IUser</a></li>
 							</ul>
 						</section>
 						<section class="tsd-index-section ">
 							<h3>Variables</h3>
 							<ul class="tsd-index-list">
 								<li class="tsd-kind-variable"><a href="globals.html#routes" class="tsd-kind-icon">routes</a></li>
+								<li class="tsd-kind-variable tsd-is-not-exported"><a href="globals.html#upload" class="tsd-kind-icon">upload</a></li>
 							</ul>
 						</section>
 					</div>
@@ -97,9 +104,29 @@
 					<div class="tsd-signature tsd-kind-icon">routes<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">Router</span><span class="tsd-signature-symbol"> =&nbsp;Router()</span></div>
 					<aside class="tsd-sources">
 						<ul>
-							<li>Defined in router.ts:9</li>
+							<li>Defined in <a href="https://github.com/V1pi/rocketseat/blob/59e7863/backend/src/router.ts#L17">router.ts:17</a></li>
 						</ul>
 					</aside>
+					<div class="tsd-comment tsd-typography">
+						<div class="lead">
+							<p>Gerencia as rotas</p>
+						</div>
+					</div>
+				</section>
+				<section class="tsd-panel tsd-member tsd-kind-variable tsd-is-not-exported">
+					<a name="upload" class="tsd-anchor"></a>
+					<h3><span class="tsd-flag ts-flagConst">Const</span> upload</h3>
+					<div class="tsd-signature tsd-kind-icon">upload<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">Instance</span><span class="tsd-signature-symbol"> =&nbsp;multer(Upload)</span></div>
+					<aside class="tsd-sources">
+						<ul>
+							<li>Defined in <a href="https://github.com/V1pi/rocketseat/blob/59e7863/backend/src/router.ts#L22">router.ts:22</a></li>
+						</ul>
+					</aside>
+					<div class="tsd-comment tsd-typography">
+						<div class="lead">
+							<p>Empacotador da classe Upload na qual manipula o upload de imagens para o servidor</p>
+						</div>
+					</div>
 				</section>
 			</section>
 		</div>
@@ -117,13 +144,34 @@
 						<a href="classes/app.html" class="tsd-kind-icon">App</a>
 					</li>
 					<li class=" tsd-kind-class">
+						<a href="classes/bookingcontroller.html" class="tsd-kind-icon">Booking<wbr>Controller</a>
+					</li>
+					<li class=" tsd-kind-class">
+						<a href="classes/dashboardcontroller.html" class="tsd-kind-icon">Dashboard<wbr>Controller</a>
+					</li>
+					<li class=" tsd-kind-class">
+						<a href="classes/spotcontroller.html" class="tsd-kind-icon">Spot<wbr>Controller</a>
+					</li>
+					<li class=" tsd-kind-class">
+						<a href="classes/upload.html" class="tsd-kind-icon">Upload</a>
+					</li>
+					<li class=" tsd-kind-class">
 						<a href="classes/usercontroller.html" class="tsd-kind-icon">User<wbr>Controller</a>
 					</li>
-					<li class=" tsd-kind-interface tsd-is-not-exported">
-						<a href="interfaces/userinterface.html" class="tsd-kind-icon">User<wbr>Interface</a>
+					<li class=" tsd-kind-interface">
+						<a href="interfaces/ibooking.html" class="tsd-kind-icon">IBooking</a>
+					</li>
+					<li class=" tsd-kind-interface">
+						<a href="interfaces/ispot.html" class="tsd-kind-icon">ISpot</a>
+					</li>
+					<li class=" tsd-kind-interface">
+						<a href="interfaces/iuser.html" class="tsd-kind-icon">IUser</a>
 					</li>
 					<li class=" tsd-kind-variable">
 						<a href="globals.html#routes" class="tsd-kind-icon">routes</a>
+					</li>
+					<li class=" tsd-kind-variable tsd-is-not-exported">
+						<a href="globals.html#upload" class="tsd-kind-icon">upload</a>
 					</li>
 				</ul>
 			</nav>
