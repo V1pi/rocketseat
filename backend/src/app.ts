@@ -14,6 +14,7 @@ class App {
      * aplicação
     */
     public express: express.Application
+    private connection: Promise<mongoose.Connection>
     /**
      * @constructor Chama os métodos privados
      * responsáveis pelos middlewares, database e routes
@@ -22,7 +23,7 @@ class App {
     public constructor () {
       this.express = express()
       this.middlewares()
-      this.database()
+      this.connection = this.database()
       this.routes()
     }
 
@@ -42,16 +43,20 @@ class App {
      * Conecta ao mongoDB utilizando uma conta pessoa e emite no console caso
      * algum erro ou sucesso.
      */
-    private database ():void {
-      mongoose.connect('mongodb+srv://teste:teste@rocketseat-87nam.mongodb.net/semana09?retryWrites=true&w=majority', {
+    private async database ():Promise<mongoose.Connection> {
+      return mongoose.createConnection('mongodb+srv://teste:teste@rocketseat-87nam.mongodb.net/semana09?retryWrites=true&w=majority', {
         useNewUrlParser: true,
         useUnifiedTopology: true
       })
-        .then(() => console.log('DB Connected!'))
-        .catch(err => {
-          console.log(Error, err.message)
-        })
+    }
+
+    public async connect (): Promise<void> {
+      await this.connection
+    }
+
+    public closeConnection () : void {
+      mongoose.disconnect()
     }
 }
 
-export default new App().express
+export default new App()

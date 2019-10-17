@@ -6,10 +6,10 @@
 import { Router } from 'express'
 import SessionController from './controllers/SessionController'
 import SpotController from './controllers/SpotController'
-import multer = require('multer')
 import Upload from './config/Upload'
 import DashboardController from './controllers/DashboardController'
 import BookingController from './controllers/BookingController'
+import multer = require('multer')
 
 /**
  * Gerencia as rotas
@@ -25,6 +25,9 @@ routes.post('/sessions', SessionController.store)
 routes.post('/spots', upload.single('thumbnail'), SpotController.store)
 routes.get('/spots', SpotController.index)
 routes.get('/dashboard', DashboardController.show)
+routes.get('/', (req, res) => {
+  return res.send('Olá galera')
+})
 
 routes.post('/spots/:spot_id/bookings', BookingController.store)
 

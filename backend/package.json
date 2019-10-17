@@ -7,7 +7,7 @@
   "scripts": {
     "dev": "nodemon src/server.ts",
     "build": "sucrase ./src -d ./dist --transforms typescript,imports",
-    "test": "jest --no-cache",
+    "test": "jest --no-cache --detectOpenHandles",
     "doc": "npx typedoc --out ./docs --mode file ./src"
   },
   "dependencies": {
@@ -56,6 +56,7 @@
       "jsx",
       "json",
       "node"
-    ]
+    ],
+    "testEnvironment": "node"
   }
 }
