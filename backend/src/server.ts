@@ -1,7 +1,3 @@
 import app from './app'
-
-async function tesste () : Promise<void> {
-  await app.connect()
-}
-tesste()
+app.connectDatabase()
 app.express.listen(3333, 'localhost')

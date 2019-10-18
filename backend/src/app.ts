@@ -1,7 +1,7 @@
 import express from 'express'
 import mongoose from 'mongoose'
 import cors from 'cors'
-
+import { MONGODB_URI } from './config/config'
 import routes from './router'
 
 /**
@@ -14,7 +14,7 @@ class App {
      * aplicação
     */
     public express: express.Application
-    private connection: Promise<mongoose.Connection>
+    public connection?: typeof mongoose
     /**
      * @constructor Chama os métodos privados
      * responsáveis pelos middlewares, database e routes
@@ -23,7 +23,6 @@ class App {
     public constructor () {
       this.express = express()
       this.middlewares()
-      this.connection = this.database()
       this.routes()
     }
 
@@ -43,19 +42,20 @@ class App {
      * Conecta ao mongoDB utilizando uma conta pessoa e emite no console caso
      * algum erro ou sucesso.
      */
-    private async database ():Promise<mongoose.Connection> {
-      return mongoose.createConnection('mongodb+srv://teste:teste@rocketseat-87nam.mongodb.net/semana09?retryWrites=true&w=majority', {
-        useNewUrlParser: true,
-        useUnifiedTopology: true
-      })
+    public async connectDatabase ():Promise<void> {
+      if (!this.connection && MONGODB_URI) {
+        this.connection = await mongoose.connect(MONGODB_URI, {
+          useNewUrlParser: true,
+          useUnifiedTopology: true
+        })
+      }
     }
 
-    public async connect (): Promise<void> {
-      await this.connection
-    }
-
-    public closeConnection () : void {
-      mongoose.disconnect()
+    public async closeDatabase () : Promise<void> {
+      if (this.connection) {
+        await this.connection.disconnect()
+        this.connection = undefined
+      }
     }
 }
 
