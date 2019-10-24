@@ -23,16 +23,16 @@ export interface IBooking extends Document {
  * @ignore
  */
 const BookingSchema:Schema = new Schema({
-    date: String,
-    approved: Boolean,
-    user: {
-        type: Schema.Types.ObjectId,
-        ref: 'User'
-    },    
-    spot: {
-        type: Schema.Types.ObjectId,
-        ref: 'Spot'
-    }
+  date: String,
+  approved: Boolean,
+  user: {
+    type: Schema.Types.ObjectId,
+    ref: 'User'
+  },
+  spot: {
+    type: Schema.Types.ObjectId,
+    ref: 'Spot'
+  }
 })
 
 export default model<IBooking>('Booking', BookingSchema)

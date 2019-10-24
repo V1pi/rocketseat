@@ -3,7 +3,7 @@
 <head>
 	<meta charset="utf-8">
 	<meta http-equiv="X-UA-Compatible" content="IE=edge">
-	<title>SpotController | backend</title>
+	<title>UserRepository | backend</title>
 	<meta name="description" content="">
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 	<link rel="stylesheet" href="../assets/css/main.css">
@@ -56,22 +56,38 @@
 					<a href="../globals.html">Globals</a>
 				</li>
 				<li>
-					<a href="spotcontroller.html">SpotController</a>
+					<a href="userrepository.html">UserRepository</a>
 				</li>
 			</ul>
-			<h1>Class SpotController</h1>
+			<h1>Class UserRepository</h1>
 		</div>
 	</div>
 </header>
 <div class="container container-main">
 	<div class="row">
 		<div class="col-8 col-content">
+			<section class="tsd-panel tsd-comment">
+				<div class="tsd-comment tsd-typography">
+					<div class="lead">
+						<p>exists(t: T): Promise<boolean>;
+								delete(t: T): Promise<T>;
+									getById(id: string): Promise<T>;
+						save(t: T): Promise<T>;</p>
+					</div>
+				</div>
+			</section>
 			<section class="tsd-panel tsd-hierarchy">
 				<h3>Hierarchy</h3>
 				<ul class="tsd-hierarchy">
 					<li>
-						<span class="target">SpotController</span>
+						<span class="target">UserRepository</span>
 					</li>
+				</ul>
+			</section>
+			<section class="tsd-panel">
+				<h3>Implements</h3>
+				<ul class="tsd-hierarchy">
+					<li><a href="../interfaces/ibaserepository.html" class="tsd-signature-type">IBaseRepository</a><span class="tsd-signature-symbol">&lt;</span><a href="../interfaces/iuser.html" class="tsd-signature-type">IUser</a><span class="tsd-signature-symbol">&gt;</span></li>
 				</ul>
 			</section>
 			<section class="tsd-panel-group tsd-index-group">
@@ -81,8 +97,10 @@
 						<section class="tsd-index-section ">
 							<h3>Methods</h3>
 							<ul class="tsd-index-list">
-								<li class="tsd-kind-method tsd-parent-kind-class"><a href="spotcontroller.html#index" class="tsd-kind-icon">index</a></li>
-								<li class="tsd-kind-method tsd-parent-kind-class"><a href="spotcontroller.html#store" class="tsd-kind-icon">store</a></li>
+								<li class="tsd-kind-method tsd-parent-kind-class"><a href="userrepository.html#delete" class="tsd-kind-icon">delete</a></li>
+								<li class="tsd-kind-method tsd-parent-kind-class"><a href="userrepository.html#exists" class="tsd-kind-icon">exists</a></li>
+								<li class="tsd-kind-method tsd-parent-kind-class"><a href="userrepository.html#getbyid" class="tsd-kind-icon">get<wbr>ById</a></li>
+								<li class="tsd-kind-method tsd-parent-kind-class"><a href="userrepository.html#save" class="tsd-kind-icon">save</a></li>
 							</ul>
 						</section>
 					</div>
@@ -91,76 +109,96 @@
 			<section class="tsd-panel-group tsd-member-group ">
 				<h2>Methods</h2>
 				<section class="tsd-panel tsd-member tsd-kind-method tsd-parent-kind-class">
-					<a name="index" class="tsd-anchor"></a>
-					<h3>index</h3>
+					<a name="delete" class="tsd-anchor"></a>
+					<h3>delete</h3>
 					<ul class="tsd-signatures tsd-kind-method tsd-parent-kind-class">
-						<li class="tsd-signature tsd-kind-icon">index<span class="tsd-signature-symbol">(</span>req<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">Request</span>, res<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">Response</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">Promise</span><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">Response</span><span class="tsd-signature-symbol">&gt;</span></li>
+						<li class="tsd-signature tsd-kind-icon">delete<span class="tsd-signature-symbol">(</span>id<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">string</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">Promise</span><span class="tsd-signature-symbol">&lt;</span><a href="../interfaces/iuser.html" class="tsd-signature-type">IUser</a><span class="tsd-signature-symbol"> | </span><span class="tsd-signature-type">null</span><span class="tsd-signature-symbol">&gt;</span></li>
 					</ul>
 					<ul class="tsd-descriptions">
 						<li class="tsd-description">
 							<aside class="tsd-sources">
+								<p>Implementation of <a href="../interfaces/ibaserepository.html">IBaseRepository</a>.<a href="../interfaces/ibaserepository.html#delete">delete</a></p>
 								<ul>
-									<li>Defined in <a href="https://github.com/V1pi/rocketseat/blob/3810a7b/backend/src/controllers/SpotController.ts#L11">controllers/SpotController.ts:11</a></li>
+									<li>Defined in repositories/UserRepository.ts:21</li>
 								</ul>
 							</aside>
-							<div class="tsd-comment tsd-typography">
-								<div class="lead">
-									<p>Retorna uma listagem de spot dependendo da tech</p>
-								</div>
-							</div>
 							<h4 class="tsd-parameters-title">Parameters</h4>
 							<ul class="tsd-parameters">
 								<li>
-									<h5>req: <span class="tsd-signature-type">Request</span></h5>
-									<div class="tsd-comment tsd-typography">
-										<p>recebe a requisição feita pelo cliente</p>
-									</div>
-								</li>
-								<li>
-									<h5>res: <span class="tsd-signature-type">Response</span></h5>
-									<div class="tsd-comment tsd-typography">
-										<p>a resposta que será enviada para o cliente</p>
-									</div>
+									<h5>id: <span class="tsd-signature-type">string</span></h5>
 								</li>
 							</ul>
-							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">Promise</span><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">Response</span><span class="tsd-signature-symbol">&gt;</span></h4>
+							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">Promise</span><span class="tsd-signature-symbol">&lt;</span><a href="../interfaces/iuser.html" class="tsd-signature-type">IUser</a><span class="tsd-signature-symbol"> | </span><span class="tsd-signature-type">null</span><span class="tsd-signature-symbol">&gt;</span></h4>
 						</li>
 					</ul>
 				</section>
 				<section class="tsd-panel tsd-member tsd-kind-method tsd-parent-kind-class">
-					<a name="store" class="tsd-anchor"></a>
-					<h3>store</h3>
+					<a name="exists" class="tsd-anchor"></a>
+					<h3>exists</h3>
 					<ul class="tsd-signatures tsd-kind-method tsd-parent-kind-class">
-						<li class="tsd-signature tsd-kind-icon">store<span class="tsd-signature-symbol">(</span>req<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">Request</span>, res<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">Response</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">Promise</span><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">Response</span><span class="tsd-signature-symbol">&gt;</span></li>
+						<li class="tsd-signature tsd-kind-icon">exists<span class="tsd-signature-symbol">(</span>user<span class="tsd-signature-symbol">: </span><a href="../interfaces/iuser.html" class="tsd-signature-type">IUser</a><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">Promise</span><span class="tsd-signature-symbol">&lt;</span><a href="../interfaces/iuser.html" class="tsd-signature-type">IUser</a><span class="tsd-signature-symbol"> | </span><span class="tsd-signature-type">null</span><span class="tsd-signature-symbol">&gt;</span></li>
 					</ul>
 					<ul class="tsd-descriptions">
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in <a href="https://github.com/V1pi/rocketseat/blob/3810a7b/backend/src/controllers/SpotController.ts#L24">controllers/SpotController.ts:24</a></li>
+									<li>Defined in repositories/UserRepository.ts:10</li>
 								</ul>
 							</aside>
-							<div class="tsd-comment tsd-typography">
-								<div class="lead">
-									<p>Armazena um novo spot caso o usuário que solicitou o spot exista</p>
-								</div>
-							</div>
 							<h4 class="tsd-parameters-title">Parameters</h4>
 							<ul class="tsd-parameters">
 								<li>
-									<h5>req: <span class="tsd-signature-type">Request</span></h5>
-									<div class="tsd-comment tsd-typography">
-										<p>recebe a requisição feita pelo cliente</p>
-									</div>
-								</li>
-								<li>
-									<h5>res: <span class="tsd-signature-type">Response</span></h5>
-									<div class="tsd-comment tsd-typography">
-										<p>a resposta que será enviada para o cliente</p>
-									</div>
+									<h5>user: <a href="../interfaces/iuser.html" class="tsd-signature-type">IUser</a></h5>
 								</li>
 							</ul>
-							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">Promise</span><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">Response</span><span class="tsd-signature-symbol">&gt;</span></h4>
+							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">Promise</span><span class="tsd-signature-symbol">&lt;</span><a href="../interfaces/iuser.html" class="tsd-signature-type">IUser</a><span class="tsd-signature-symbol"> | </span><span class="tsd-signature-type">null</span><span class="tsd-signature-symbol">&gt;</span></h4>
+						</li>
+					</ul>
+				</section>
+				<section class="tsd-panel tsd-member tsd-kind-method tsd-parent-kind-class">
+					<a name="getbyid" class="tsd-anchor"></a>
+					<h3>get<wbr>ById</h3>
+					<ul class="tsd-signatures tsd-kind-method tsd-parent-kind-class">
+						<li class="tsd-signature tsd-kind-icon">get<wbr>ById<span class="tsd-signature-symbol">(</span>id<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">string</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">Promise</span><span class="tsd-signature-symbol">&lt;</span><a href="../interfaces/iuser.html" class="tsd-signature-type">IUser</a><span class="tsd-signature-symbol"> | </span><span class="tsd-signature-type">null</span><span class="tsd-signature-symbol">&gt;</span></li>
+					</ul>
+					<ul class="tsd-descriptions">
+						<li class="tsd-description">
+							<aside class="tsd-sources">
+								<p>Implementation of <a href="../interfaces/ibaserepository.html">IBaseRepository</a>.<a href="../interfaces/ibaserepository.html#getbyid">getById</a></p>
+								<ul>
+									<li>Defined in repositories/UserRepository.ts:26</li>
+								</ul>
+							</aside>
+							<h4 class="tsd-parameters-title">Parameters</h4>
+							<ul class="tsd-parameters">
+								<li>
+									<h5>id: <span class="tsd-signature-type">string</span></h5>
+								</li>
+							</ul>
+							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">Promise</span><span class="tsd-signature-symbol">&lt;</span><a href="../interfaces/iuser.html" class="tsd-signature-type">IUser</a><span class="tsd-signature-symbol"> | </span><span class="tsd-signature-type">null</span><span class="tsd-signature-symbol">&gt;</span></h4>
+						</li>
+					</ul>
+				</section>
+				<section class="tsd-panel tsd-member tsd-kind-method tsd-parent-kind-class">
+					<a name="save" class="tsd-anchor"></a>
+					<h3>save</h3>
+					<ul class="tsd-signatures tsd-kind-method tsd-parent-kind-class">
+						<li class="tsd-signature tsd-kind-icon">save<span class="tsd-signature-symbol">(</span>user<span class="tsd-signature-symbol">: </span><a href="../interfaces/iuser.html" class="tsd-signature-type">IUser</a><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">Promise</span><span class="tsd-signature-symbol">&lt;</span><a href="../interfaces/iuser.html" class="tsd-signature-type">IUser</a><span class="tsd-signature-symbol"> | </span><span class="tsd-signature-type">null</span><span class="tsd-signature-symbol">&gt;</span></li>
+					</ul>
+					<ul class="tsd-descriptions">
+						<li class="tsd-description">
+							<aside class="tsd-sources">
+								<ul>
+									<li>Defined in repositories/UserRepository.ts:31</li>
+								</ul>
+							</aside>
+							<h4 class="tsd-parameters-title">Parameters</h4>
+							<ul class="tsd-parameters">
+								<li>
+									<h5>user: <a href="../interfaces/iuser.html" class="tsd-signature-type">IUser</a></h5>
+								</li>
+							</ul>
+							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">Promise</span><span class="tsd-signature-symbol">&lt;</span><a href="../interfaces/iuser.html" class="tsd-signature-type">IUser</a><span class="tsd-signature-symbol"> | </span><span class="tsd-signature-type">null</span><span class="tsd-signature-symbol">&gt;</span></h4>
 						</li>
 					</ul>
 				</section>
@@ -185,30 +223,36 @@
 					<li class=" tsd-kind-class">
 						<a href="dashboardcontroller.html" class="tsd-kind-icon">Dashboard<wbr>Controller</a>
 					</li>
-				</ul>
-				<ul class="current">
-					<li class="current tsd-kind-class">
+					<li class=" tsd-kind-class">
 						<a href="spotcontroller.html" class="tsd-kind-icon">Spot<wbr>Controller</a>
-						<ul>
-							<li class=" tsd-kind-method tsd-parent-kind-class">
-								<a href="spotcontroller.html#index" class="tsd-kind-icon">index</a>
-							</li>
-							<li class=" tsd-kind-method tsd-parent-kind-class">
-								<a href="spotcontroller.html#store" class="tsd-kind-icon">store</a>
-							</li>
-						</ul>
 					</li>
-				</ul>
-				<ul class="after-current">
 					<li class=" tsd-kind-class">
 						<a href="upload.html" class="tsd-kind-icon">Upload</a>
 					</li>
 					<li class=" tsd-kind-class">
 						<a href="usercontroller.html" class="tsd-kind-icon">User<wbr>Controller</a>
 					</li>
-					<li class=" tsd-kind-class">
+				</ul>
+				<ul class="current">
+					<li class="current tsd-kind-class">
 						<a href="userrepository.html" class="tsd-kind-icon">User<wbr>Repository</a>
+						<ul>
+							<li class=" tsd-kind-method tsd-parent-kind-class">
+								<a href="userrepository.html#delete" class="tsd-kind-icon">delete</a>
+							</li>
+							<li class=" tsd-kind-method tsd-parent-kind-class">
+								<a href="userrepository.html#exists" class="tsd-kind-icon">exists</a>
+							</li>
+							<li class=" tsd-kind-method tsd-parent-kind-class">
+								<a href="userrepository.html#getbyid" class="tsd-kind-icon">get<wbr>ById</a>
+							</li>
+							<li class=" tsd-kind-method tsd-parent-kind-class">
+								<a href="userrepository.html#save" class="tsd-kind-icon">save</a>
+							</li>
+						</ul>
 					</li>
+				</ul>
+				<ul class="after-current">
 					<li class=" tsd-kind-interface tsd-has-type-parameter">
 						<a href="../interfaces/ibaserepository.html" class="tsd-kind-icon">IBase<wbr>Repository</a>
 					</li>

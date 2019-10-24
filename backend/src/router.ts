@@ -29,6 +29,6 @@ routes.get('/', (req, res) => {
   return res.send('Olá galera')
 })
 
-routes.post('/spots/:spot_id/bookings', BookingController.store)
+routes.post('/spots/:spotId/bookings', BookingController.store)
 
 export default routes

@@ -4,6 +4,7 @@
 
 import { Request, Response } from 'express'
 import User from '../models/User'
+import UserRepository from '../repositories/UserRepository'
 
 class UserController {
   /**
@@ -13,14 +14,9 @@ class UserController {
    */
   public async store (req:Request, res:Response): Promise<Response> {
     const { email } = req.body
-
-    let user = await User.findOne({ email })
-
-    if (!user) {
-      user = await User.create({ email })
-    }
-
-    return res.json(user)
+    const receiverUser = new User({ email })
+    const newUser = await UserRepository.save(receiverUser)
+    return res.json(newUser)
   }
 }
 

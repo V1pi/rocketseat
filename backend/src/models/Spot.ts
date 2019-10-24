@@ -21,12 +21,12 @@ export interface ISpot extends Document {
  */
 const SpotSchema:Schema = new Schema({
   thumbnail: String,
-    company: String,
-    price: Number,
-    techs: [String],
-    user: {
-      type: Schema.Types.ObjectId
-    }
+  company: String,
+  price: Number,
+  techs: [String],
+  user: {
+    type: Schema.Types.ObjectId
+  }
 })
 
 export default model<ISpot>('Spot', SpotSchema)

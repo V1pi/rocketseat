@@ -24,5 +24,6 @@ module.exports = {
     '@typescript-eslint'
   ],
   rules: {
+    '@typescript-eslint/interface-name-prefix': 0
   }
 }
